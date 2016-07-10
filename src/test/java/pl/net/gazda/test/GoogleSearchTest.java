@@ -10,6 +10,7 @@ import static com.codeborne.selenide.CollectionCondition.sizeNotEqual;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
+@Ignore
 public class GoogleSearchTest {
     @ClassRule public static ChromeWebDriver chromeDriver = new ChromeWebDriver();
     @Rule public AllureReportScreenShooter screenShot = new AllureReportScreenShooter();
