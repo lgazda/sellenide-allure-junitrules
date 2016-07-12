@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+</head>
+<body>
+    Users: <select id="userSelect" ></select>
+    <button type="button" id="showMessageButton" >show message</button>
+    <div id="messageBox" class="message" style="display: none">Some message</div>
+
+    <script type="text/javascript">
+        $.getJSON("/user", function(data) {
+            $.each(data, function(index, item) {
+                $("#userSelect").append($("<option></option>").text(item.name).val(item.name));
+            });
+        });
+
+        $("#showMessageButton").click(function() {
+            $("#messageBox").show();
+        });
+    </script>
+</body>
+</html>

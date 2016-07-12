@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.rules.ExternalResource;
 
 
-public class SelenideConfiguration extends ExternalResource {
+public class SelenideTargetConfiguration extends ExternalResource {
     @Override
     protected void before() throws Throwable {
         Configuration.reportsFolder = "target/selenide";

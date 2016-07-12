@@ -6,7 +6,7 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
 
 import static junit.framework.Assert.fail;
 
-@Description("Sample metadata example. Shows how step/title/description work")
+@Description("Shows how step/title/description work")
 @Title("Allure Metadata Test")
 public class AllureMetadataTest {
     @Test
