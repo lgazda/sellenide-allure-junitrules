@@ -6,7 +6,7 @@ import org.junit.rules.ExternalResource;
 
 public class SelenideTargetConfiguration extends ExternalResource {
     @Override
-    protected void before() throws Throwable {
+    protected void before() {
         Configuration.reportsFolder = "target/selenide";
     }
 }

@@ -8,7 +8,7 @@ import static java.lang.System.setProperty;
 
 public class ChromeWebDriver extends SelenideTargetConfiguration {
     @Override
-    protected void before() throws Throwable {
+    protected void before() {
         super.before();
         setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
         setWebDriver(new ChromeDriver());

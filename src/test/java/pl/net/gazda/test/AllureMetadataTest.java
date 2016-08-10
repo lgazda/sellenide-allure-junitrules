@@ -8,12 +8,12 @@ import static junit.framework.Assert.fail;
 
 @Description("Shows how step/title/description work")
 @Title("Allure Metadata Test")
+@Features("JIRA-1 feature, JIRA-11 and other")
 public class AllureMetadataTest {
     @Test
     @Title(("First test"))
     @Severity(SeverityLevel.BLOCKER)
     @Stories("Story 1")
-    @Features("JIRA-1 feature, JIRA-11 and other")
     public void firstTest() {
         firstStep();
         secondStep();
@@ -22,8 +22,7 @@ public class AllureMetadataTest {
     }
 
     @Test
-    @Stories("Story 1")
-    @Features("JIRA-33")
+    @Stories("Story 2")
     public void secondTest() {
         firstStep();
         runtimeException();
@@ -35,6 +34,14 @@ public class AllureMetadataTest {
     public void thirdTest() {
         firstStep();
         secondStep();
+    }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Stories("Story 2")
+    @Title("Story 2 test 2")
+    public void secondTestToStory2() {
+
     }
 
     @Step("First step. Step method name {method}")
