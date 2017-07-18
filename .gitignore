@@ -11,5 +11,4 @@ hs_err_pid*
 /target/
 
 *.iml
-src/main/java/
-src/test/resources/
+
