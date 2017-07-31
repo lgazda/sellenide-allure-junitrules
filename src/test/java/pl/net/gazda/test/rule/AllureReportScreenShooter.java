@@ -3,16 +3,13 @@ package pl.net.gazda.test.rule;
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.ex.ErrorMessages;
 import com.codeborne.selenide.ex.UIAssertionError;
-import com.codeborne.selenide.junit.ScreenShooter;
 import com.google.common.io.Files;
-import org.apache.commons.io.FileUtils;
+import io.qameta.allure.Attachment;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
-import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

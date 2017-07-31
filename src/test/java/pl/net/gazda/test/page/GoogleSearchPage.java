@@ -1,12 +1,10 @@
 package pl.net.gazda.test.page;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import ru.yandex.qatools.allure.annotations.Step;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 /**
@@ -16,7 +14,7 @@ public class GoogleSearchPage {
     @FindBy(how = How.NAME, using = "q")
     private SelenideElement searchBox;
 
-    @Step("searching: {0}")
+    @Step("searching: {searchText}")
     public SearchResultsPage searchFor(String searchText) {
         searchBox.setValue(searchText).pressEnter();
         return page(SearchResultsPage.class);

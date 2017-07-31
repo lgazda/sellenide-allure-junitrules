@@ -1,19 +1,25 @@
 package pl.net.gazda.app;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Features;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import ru.yandex.qatools.allure.annotations.*;
-import ru.yandex.qatools.allure.model.SeverityLevel;
 
-import static junit.framework.Assert.fail;
+import static junit.framework.TestCase.fail;
 
-@Description("Shows how step/title/description works in Allure framework")
-@Title("Allure Metadata Test")
-@Features("JIRA-1 feature, JIRA-11 and other")
+
+@DisplayName("AllureMetadataTest Display Name")
+@Features({@Feature("Meta data feature")})
 public class AllureMetadataTest {
     @Test
-    @Title(("First test"))
     @Severity(SeverityLevel.BLOCKER)
-    @Stories("Story 1")
+    @Story("Story 1")
+    @Description("Shows how step/title/description works in Allure framework")
     public void firstTest() {
         firstStep();
         secondStep();
@@ -22,7 +28,8 @@ public class AllureMetadataTest {
     }
 
     @Test
-    @Stories("Story 2")
+    @Story("Story 2")
+    @Description("Second story")
     public void secondTest() {
         firstStep();
         runtimeException();
@@ -38,13 +45,13 @@ public class AllureMetadataTest {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Stories("Story 2")
-    @Title("Story 2 test 2")
+    @Story("Story 2")
     public void secondTestToStory2() {
 
     }
 
-    @Step("First step. Step method name {method}")
+    @Step("First step.")
+    @Description("First step description")
     private void firstStep() {
         sum(10, 2);
         sum(2, 2);
@@ -57,9 +64,9 @@ public class AllureMetadataTest {
         stepWithoutAnnotations();
     }
 
-    @Step("Sum {0} + {1}")
-    private void sum(int a, int b) {
-
+    @Step("Sum {a} + {b}")
+    private int sum(int a, int b) {
+        return a + b;
     }
 
     @Step("Runtime Exception")
