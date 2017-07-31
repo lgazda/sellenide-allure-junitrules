@@ -80,7 +80,8 @@
     </dependencies>
 
     <build>
-        <defaultGoal>dependency:copy-dependencies</defaultGoal>
+        <!-- with default goal you don't need to specify it every time, just run "mvn" -->
+        <defaultGoal>clean test site</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -105,7 +106,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <!-- execute site even though tests are failing -->
+                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar
                         -DBUILD_URL=${BUILD_URL}
